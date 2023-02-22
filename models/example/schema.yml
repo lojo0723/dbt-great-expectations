@@ -6,12 +6,16 @@ models:
       description: "A starter dbt model"
       columns:
           - name: id
+            schema: new_york_citibike
+            database: bigquery-public-data
             description: "The primary key for this table"
             tests:
                 - unique
                 - not_null
 
     - name: my_second_dbt_model
+      schema: new_york_citibike
+      database: bigquery-public-data
       description: "A starter dbt model"
       columns:
           - name: id

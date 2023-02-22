@@ -11,17 +11,11 @@
 
 with source_data as (
 
-    select 1 as id
-    union all
-    select null as id
+SELECT tripduration, starttime, stoptime, start_station_id, start_station_name, end_station_id, end_station_name, bikeid, usertype, birth_year, gender, customer_plan
+FROM `bigquery-public-data.new_york_citibike.citibike_trips`
+WHERE tripduration is not null
 
 )
 
 select *
 from source_data
-
-/*
-    Uncomment the line below to remove records with null `id` values
-*/
-
--- where id is not null
